@@ -2,6 +2,9 @@
   <h1>
     <!--Photos-->
     <a href="/photos/new" class="btn btn-lg btn-success"><i class="fa fa-plus" aria-hidden="true"></i></a>
+    
+  <p> <%= @user_id %> </p>
+  
   </h1>
 </div>
 
@@ -24,7 +27,7 @@
         <td>
           <a href="/photos/<%= photo.id %>" class="btn btn-primary">Show</a>
           
-        <% if photo.user_id == 1  %>
+        <% if photo.user_id == @user_id  %>
 
           <a href="/photos/<%= photo.id %>/edit" class="btn btn-warning">Edit</a>
           <a href="/delete_photo/<%= photo.id %>" class="btn btn-danger" rel="nofollow">Delete</a>

@@ -12,6 +12,7 @@ class PhotosController < ApplicationController
   
   def index
     @photos = Photo.all
+    @user_id = current_user.id
     
     # @from_time = Time.now - @photos.create
     # @time_ago = time_ago_in_words(@from_time)
