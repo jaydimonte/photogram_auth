@@ -1,11 +1,11 @@
 <div class="page-header">
-  <h1>
+
     <!--Photos-->
     <a href="/photos/new" class="btn btn-lg btn-success"><i class="fa fa-plus" aria-hidden="true"></i></a>
     
   <p> <%= @user_id %> </p>
   
-  </h1>
+
 </div>
 
 
@@ -24,11 +24,6 @@
         <td><%= photo.caption %></td>
         <td><img src="<%= photo.image %>" class="img-responsive"></td>
          
-         <% @comments.each do |comment| %>
-           <% if comment.photo_id == photo.id %>
-           
-           <% end %> 
-         <% end %>
 
         <td>
           <a href="/photos/<%= photo.id %>" class="btn btn-primary">Show</a>
