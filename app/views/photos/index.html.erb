@@ -14,7 +14,7 @@
       <div class="panel-heading">
         <h3 class="panel-title">
           
-          <%= photo.user_id %>
+          <%= photo.user.username %>
           
         </h3>
       </div>
@@ -23,6 +23,12 @@
       <tr>
         <td><%= photo.caption %></td>
         <td><img src="<%= photo.image %>" class="img-responsive"></td>
+         
+         <% @comments.each do |comment| %>
+           <% if comment.photo_id == photo.id %>
+           
+           <% end %> 
+         <% end %>
 
         <td>
           <a href="/photos/<%= photo.id %>" class="btn btn-primary">Show</a>
