@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 
-  before_action :authenticate_user! 
+#  before_action :authenticate_user! 
   #we added this in so that we can make sure that people authenticate themselves 
   
 end
