@@ -28,6 +28,16 @@
           ago  <br />
         </td>
         
+<!--start of likes -->
+          
+    <td>
+      
+      
+    </td>
+    
+    
+<!--start of all comments-->
+        
         <td>
           <% @comments.each do |comment| %>
             <% if comment.photo_id == photo.id %>
@@ -37,6 +47,7 @@
           <% end %>
           
         </td>
+  
 <!--start of comments form -->
         <td>
           
@@ -49,8 +60,15 @@
       </div>
 
       <!-- Label and input for body -->
-        <div class="input-group">
-       <input type="text" id="body" name="body" class="form-control" placeholder="Add a comment..." required="">      </div>
+      <div class="input-group">
+                    <input type="text" id="body" name="body" class="form-control" placeholder="Add a comment..." required="">
+
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="submit">
+                        <i class="fa fa-commenting-o"></i>
+                      </button>
+                    </span>
+      </div>
 
       <!-- Label and input for user_id -->
       <div class="form-group">
@@ -62,11 +80,10 @@
       </button>
 
     </form>
-          
+        </td>          
 <!--end comment form -->
-          
-        </td>
-        
+    
+    
         <td>
           <a href="/photos/<%= photo.id %>" class="btn btn-primary">Show</a>
           
