@@ -32,6 +32,18 @@ class LikesController < ApplicationController
     end
   end
 
+  def createlikeinphotos
+    @like = Like.new
+
+    @like.user_id = params[:user_id]
+    @like.photo_id = params[:photo_id]
+
+    @like.save
+    redirect_to("/photos")
+
+  end
+
+
   def edit
     @like = Like.find(params[:id])
 

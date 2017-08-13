@@ -21,6 +21,9 @@ class PhotosController < ApplicationController
     @comments = Comment.all
     @comment = Comment.new
     
+    @likes = Like.all
+    @like = Like.new
+    
     # @photo = Photo.find(params[photo.user_id])
     
     # @from_time = Time.now - @photo.created_at

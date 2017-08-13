@@ -31,10 +31,37 @@
 <!--start of likes -->
           
     <td>
-      
+    
+    <!--i think you need to add an if statement here   -->
+
+
+
+      <form action="/create_likeinphotos" method="post">
+              <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+              <input type="hidden" name="photo_id" value="<%= photo.id %>">
+              <input type="hidden" name="user_id" value="<%= current_user.id %>">
+     
+     <% @likes.each do |like| %>      
+     <% if like.photo_id == photo.id %> 
+     
+         <% if like.user_id == current_user.id  %>
+                <button class="btn btn-link">
+                  <i class="fa fa-heart"></i>
+                </button>
+          <% else %>
+                <button class="btn btn-link">
+                  <i class="fa fa-heart-o"></i>
+                </button>     
+          <% end %>
+        
+           <small class="text-muted" >
+                   <%= like.user.username %>
+           </small>
+        <% end %>     
+      <% end %> 
+      </form>
       
     </td>
-    
     
 <!--start of all comments-->
         
@@ -63,11 +90,11 @@
       <div class="input-group">
                     <input type="text" id="body" name="body" class="form-control" placeholder="Add a comment..." required="">
 
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="submit">
-                        <i class="fa fa-commenting-o"></i>
-                      </button>
-                    </span>
+                    <!--<span class="input-group-btn">-->
+                    <!--  <button class="btn btn-default" type="submit">-->
+                    <!--    <i class="fa fa-commenting-o"></i>-->
+                    <!--  </button>-->
+                    <!--</span>-->
       </div>
 
       <!-- Label and input for user_id -->
