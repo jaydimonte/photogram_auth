@@ -18,7 +18,12 @@ class PhotosController < ApplicationController
       @user_id = current_user.id
     end
     
-    # @from_time = Time.now - @photos.create
+    @comments = Comment.all
+    @comment = Comment.new
+    
+    # @photo = Photo.find(params[photo.user_id])
+    
+    # @from_time = Time.now - @photo.created_at
     # @time_ago = time_ago_in_words(@from_time)
 
     render("photos/index.html.erb")
