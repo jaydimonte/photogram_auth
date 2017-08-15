@@ -76,4 +76,14 @@ class LikesController < ApplicationController
       redirect_to(:back, :notice => "Like deleted.")
     end
   end
+  
+  def destroyinphoto
+    @like = Like.find(params[:id])
+
+    @like.destroy
+
+    redirect_to("/", :notice => "Like deleted.")
+
+  end
+  
 end
